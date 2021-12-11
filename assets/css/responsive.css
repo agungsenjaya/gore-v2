@@ -1,0 +1,44 @@
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) { 
+    .card-listing > div {
+        border-left: 0;
+        border-bottom:1px solid #F27A05;
+        padding-left: 0;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .card-listing > div:last-child {
+        border-left: 0;
+        border-bottom:none;
+        padding-left: 0;
+        padding-bottom: 0;
+    }
+    .card-listing > div:first-child {
+        border-left: 0;
+        padding-left: 0;
+        padding-top: 0;
+    }
+    .font-res {
+        font-size: 14px;
+    }
+    .font-res-accordion {
+        font-size: 12px;
+    }
+    .list-about > div {
+        border-right: none;
+        border-bottom:1px solid #F27A05;
+        padding-top: 20px;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) { ... }
+
+/* // Large devices (desktops, 992px and up) */
+@media (max-width: 992px) { ... }
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) { ... }
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (max-width: 1400px) { ... }

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/app.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="javascript:void(0)">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="page-loading active">
+          <div class="page-loading-inner">
+            <div class="page-spinner"></div><span>Loading...</span>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalCome" tabindex="-1" aria-labelledby="modalComeLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5 class="modal-title" id="modalComeLabel">Coming Soon</h5>
+                <button type="button" class="bg-warn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                <img src="assets/img/logo.png" alt="" width="50%">
+                <p class="mt-3">Feature is under development, <br> we will prepare it for you
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="menuMobile" aria-labelledby="menuMobileLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="menuMobileLabel">Menus</h5>
+            <button type="button" class="bg-warn cs-close btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body p-0">
+
+            <div class="list-group list-group-flush line-h-2 h6 fw-normal">
+              <a onClick="scrTo('#home')" aria-label="Close" class="pointer list-group-item list-group-item-action"><i class="bi bi-coin me-3"></i>Home</a>
+              <a onClick="scrTo('#about')" aria-label="Close" class="pointer list-group-item list-group-item-action"><i class="bi bi-archive me-3"></i>About</a>
+              <a onClick="scrTo('#roadmaps')" aria-label="Close" class="pointer list-group-item list-group-item-action"><i class="bi bi-broadcast me-3"></i>Roadmaps</a>
+              <a onClick="scrTo('#tokenomics')" aria-label="Close" class="pointer list-group-item list-group-item-action"><i class="bi bi-bar-chart me-3"></i>Tokenomics</a>
+              <a onClick="scrTo('#faq')" class="pointer list-group-item list-group-item-action"><i class="bi bi-bookmarks me-3"></i>Faq</a>
+              <a href="https://gorezillatoken.com/wp-content/themes/blankslate/assets/pdf/Gorezilla-Paper.pdf" target="_blank" class="pointer list-group-item list-group-item-action"><i class="bi bi-pdf me-3"></i>Whitepaper</a>
+              <a class="list-group-item list-group-item-action small text-uppercase">Tools</a>
+              <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalCome" class="list-group-item list-group-item-action"><i class="bi bi-arrow-up-right-square me-3"></i>Exchange</a>
+              <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalCome" class="list-group-item list-group-item-action"><i class="bi bi-boxes me-3"></i>Market</a>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="py-3 text-warn bg-brown text-center">
+            <div class="container text-uppercase">
+                Gorezilla token <span class="fw-bold">new ui design</span>
+            </div>
+        </div>
+        <div id="home"></div>
+
+        <header class="sticky-top">
+          <nav class="navbar navbar-light position-absolute w-100">
+              <div class="container">
+                <a class="navbar-brand" href="http://gorezillatoken.com/">
+                  <img src="assets/img/logo-old.png" alt="" width="70">
+                </a>
+                <div class="me-auto">
+                <div class="d-none d-sm-block">
+                  <ul class="nav nav-top">
+                      <li class="nav-item">
+                        <a class="nav-link pointer" onClick="scrTo('#home')">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pointer" onClick="scrTo('#about')">About</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pointer" onClick="scrTo('#roadmaps')">Roadmaps</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pointer" onClick="scrTo('#tokenomics')">Tokenomics</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pointer" onClick="scrTo('#faq')">Faq</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pointer" href="https://gorezillatoken.com/wp-content/themes/blankslate/assets/pdf/Gorezilla-Paper.pdf" target="_blank">Whitepaper</a>
+                      </li>
+                    </ul>
+                </div>
+                </div>
+                <div>
+                  <div class="d-none d-sm-block">
+                  <ul class="nav nav-top">
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalCome">Exchange</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalCome">Market</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="btn btn-warn text-capitalize" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalCome">Open Apps</a>
+                      </li>
+                    </ul>
+                </div>
+                <div class="d-sm-none d-block">
+                  <ul class="nav nav-top">
+                    <li class="nav-item">
+                      <a class="btn btn-warn text-capitalize" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalCome">Open Apps</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-bs-toggle="offcanvas" href="#menuMobile"><i class="bi bi-list h2"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                </div>
+              </div>
+            </nav>
+          </header>
+          <main class="shape-1 bg-brown">
+    <br>
+    <br>
+    <br>
+        <div class="grad-home">
+        <section class="space-xl">
+            <div class="container">
+                <div class="row flex-column-reverse flex-lg-row">
+                    <div class="col-md-6 align-self-center">
+                        <h3 class="display-6 fw-bold mb-4 d-none d-sm-block">
+                            Experience to coin currency <br> with <span class="text-warn">Gorezilla Token</span>
+                        </h3>
+                        <div class="row g-0">
+                            <a href="https://pancakeswap.finance/swap?outputCurrency=0x6421a0def32c7dda20890d9a3de04e1e14904d70&inputCurrency=BNB" target="_blank" class="btn btn-warn me-sm-3 me-0 mb-sm-0 mb-3 col-md-3">Pancakeswap</a>
+                            <a href="https://www.dextools.io/app/bsc/pair-explorer/0x6cae409ecd0e01b65e2c7b98bb80862f288a30db" target="_blank" class="btn btn-outline-warn col-md-3">Dextools</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <h3 class="display-6 fw-bold mb-0 d-sm-none d-block">
+                        Experience to coin currency with <span class="text-warn">Gorezilla Token</span>
+                      </h3>
+                        <img src="assets/img/logo.png" alt="" width="50%" class="my-3 my-sm-0">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="space-m">
+            <div class="container">
+                <div class="card card-home-warn">
+                  <div class="px-5 py-5">
+                    <div class="row card-listing">
+                      <div class="col-md-4">
+                        <p class="text-uppercase">Token Price</p>
+                        <h4 class="fw-bold mb-0 font-res" id="price">
+                          00
+                        </h4>
+                      </div>
+                      <div class="col-md-4">
+                        <p class="text-uppercase">Volume 24H</p>
+                        <h4 class="fw-bold mb-0 font-res" id="volume">
+                          00
+                        </h4>
+                      </div>
+                      <div class="col-md-4">
+                        <p class="text-uppercase">Liquidity</p>
+                        <h4 class="fw-bold mb-0 font-res" id="liquidity">
+                          00
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+        <section class="space-m" id="about">
+          <!-- <div class="container">
+            <div class="row flex-column-reverse flex-lg-row">
+              <div class="col-md-6 align-self-center">
+                <h3 class="display-6 fw-bold">
+                  About Us <br>
+                  <span class="text-warn">Gorezilla Token</span>
+                </h3>
+                <p class="">In a universe where Godzillas are still alive there's this particular Godzilla that most of the creatures are afraid of. He lives alone on a heel near by the Olympus mountain. Nobody really understand why he becomes such an angry Godzilla.</p>
+              </div>
+              <div class="col-md-6 mb-4 mb-sm-0">
+                <img src="assets/img/about.svg" alt="" width="100%">
+              </div>
+            </div>
+          </div> -->
+
+          <div class="container">
+
+            <h3 class="display-6 fw-bold text-center mb-4">
+              About Us <br>
+              <span class="text-warn">Gorezilla Token</span>
+            </h3>
+
+            <div class="row list-about">
+              <div class="col-md-4">
+                <p class="text-justify">In a universe where Godzillas are still alive there's this particular Godzilla that most of the creatures are afraid of.
+                  He lives alone on a heel near by the Olympus mountain. Nobody really understand why he becomes such an angry Godzilla. Once in a while,every other creatures will hear his gruesome roar, and decided to hide. Days after days, his roar is getting louder, sometimes the other creatures even see him pull out the trees around him and throw it away.
+                  "His temperament is getting worse!", one of the creature speak up.
+                  "If we keep letting him do this, he will destroy our village and put us in danger".
+                  Every other creatures are looking down, try to think of an escape.
+                  Some of them suggest that they should leave the village and build another live out there, the other suggest to trap the Godzilla and kill him, before he kill them.
+                  After long talk of discussion and debate, one of the oldest creature finally stand and speak up.
+                  "Let's visit him, and hear him out. Who knows, he actually need our help" The old man said.
+                  "Are you losing your mind!?" Shout one of the creature.
+                  "Are you trying to get us all killed!?" They said in trembling voice."Instead of guessing and put us all in a harder situation, let's just ask him. I don't think he is as bad as we thought" Continue the old man.</p>
+              </div>
+              <div class="col-md-4">
+                <p class="text-justify">
+                  After a long pause and humming all over the place, all of them are agree to follow the old man advise.
+                  On the next day, 10 creatures including the old man, are preparing their journey to the angry Godzilla's place. After 3 hours of hiking, they saw a sleeping Godzilla, his face look so pale and his forehead is frowning. The 10 creatures are looking to each other, some of them are terrified.
+                  The old man walk carefully towards the Godzilla, and now he stand before the Godzilla's face. He touched the Godzilla's skin, it is cold and sweaty, the old man thought that the Godzilla must be in pain.
+                  He tries to wake him up.
+                  "Hello mister Godzilla, can you hear my voice?" Said the old man softly.
+                  Godzilla's face moving, and he open his eyes slowly, surprised by the old man's emergence, he wakes in sudden, backed up and scream loudly.
+                  "Rrrrrooooooooaaaaaarrrrrrrrrr!!!"
+                  He screamed.
+                  The old man is pushed back up, and he almost fly away.
+                  Feeling tired, the Godzilla stop screaming and back up even further, seems like he's losing his breath.
+                  After everything is calmed down, the old man walk closer towards the Godzilla, and speak softly, "Hello mister Godzilla, we have been hearing you roaring for a long time. Sometimes, you throw things away and almost crush our village. If I may know, what is happening to you? Are you okay?"</p>
+              </div>
+              <div class="col-md-4">
+                <p class="text-justify">
+                  The Godzilla, with his red bloody eyes looks confused and hesitated for a second, but finally opened his mouth and say, "Oh old man, thank you for asking. I have been in pain for so long. I wake up with nothing but hunger! I am furious and confused. Nothing can really satisfied my hunger. I don't think anyone could help me" Said the Godzilla silently.
+  "Oh poor mister Godzilla, let me get back to my friends and see if we can help you" Said the old man.
+  The Godzilla nods his head.
+  The old man walk towards his friends, the other 9 creatures and told them what the Godzilla has said.
+  They talk there for hours, and finally all of them are walking towards the Godzilla.
+  The smallest creature take a token out of their bag, and show it to the Godzilla.
+  "Hello mister Godzilla, I've learned that you've been suffering from the pain of hunger, I offer you my Ore Token, this should help you feeling better" They said.
+  The Godzilla take the token and eat it.
+  Magically, he feels a little bit better.
+  "What is this thing!? I have only ate one of them and I feel so much better! But it hasn't taken away my hunger yet" Said the Godzilla frowning.
+  The other 9 creatures step forward and offer the Godzilla their Ore Token, each person has 1 token. The Godzilla looked hopeful and thankful to them, he feels touch by their kindness.
+                </p>
+              </div>
+              </div>
+
+              <div class="mt-4">
+
+                
+                <p class="text-justify">The Godzilla eat the token one by one, for each token he ate, he feel better and better and after ate the 5th piece, he feels so full already.
+                  "Ahhh friends, I am so grateful for your help, now I am feeling so full. Is it okay if I keep the other 5 pieces? Just in case" Said the Godzilla.
+                  "You can keep them as you want! If you need more, we will be very happy to help you fins them!" Said one of the creature.
+                  They spent the day by talking and sharing their story, by the sunset all of the creatures preparing their return to their village.
+                  "I'll see you again my friends" Godzilla said. "You guys are the best! Ore token is my answer!" He continues. <span class="text-gore">Since then, Godzilla changed its name to Gorezilla.</span></p>
+                </div>
+
+          </div>
+        </section>
+      </div>
+        </main>
+        <div fill="#D8CBED" class="sc-lcvaEy as-1"><svg viewBox="0 0 1660 48" preserveAspectRatio="none" color="text" width="20px" xmlns="http://www.w3.org/2000/svg" class="sc-bdnxRM kDWlca"><path d="M1660 48C1139.02 46.1887 336.256 15.2453 0 0H1660V48Z"></path></svg></div>
+
+        <section class="space-xl" id="roadmaps">
+          <div class="container">
+            <div class="">
+              <div class="">
+                <h3 class="display-6 fw-bold text-center text-warn">
+                  Roadmaps
+                </h3>
+              <div class="card-deck">
+              <div class="card border-0">
+              <div class="card-body">
+              <div>
+              <!-- <div class="badge bg-warn title-1 mb-3">Roadmaps</div> -->
+              <h4 class="card-title title-1 text-warn my-2"><i class="bi bi-coin me-2"></i>Phase 1</h4>
+              <div class="bg-warn" style="height:2px"></div>
+              </div>
+              <div class="card-text">
+              <ul class="list-group list-group-flush list-road">
+
+                <li class="list-group-item">
+                  <div class="media text-warn">
+                  <i class="bi bi-check-circle-fill text-warn me-2"></i>
+                  <div class="media-body">Create Gorezilla Telegram Group</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media text-warn">
+                  <i class="bi bi-check-circle-fill text-warn me-2"></i>
+                  <div class="media-body">Fair Launch</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media text-warn">
+                  <i class="bi bi-check-circle-fill text-warn me-2"></i>
+                  <div class="media-body">Burn 20% Supply</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media text-warn">
+                  <i class="bi bi-check-circle-fill text-warn me-2"></i>
+                  <div class="media-body">Creating a Website</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media text-warn">
+                  <i class="bi bi-check-circle-fill text-warn me-2"></i>
+                  <div class="media-body">Reaching 500 Telegram Members</div>
+                  </div>
+                  </li>
+              
+              </ul>
+              </div>
+              </div>
+              </div>
+              <div class="card border-0">
+              <div class="card-body">
+              <div>
+              <!-- <div class="badge bg-warn title-1 mb-3">Roadmaps</div> -->
+              <h4 class="card-title title-1 text-warn my-2"><i class="bi bi-coin me-2"></i>Phase 2</h4>
+              <div class="bg-warn" style="height:2px"></div>
+              </div>
+              <div class="card-text">
+              <ul class="list-group list-group-flush list-road">
+                <li class="list-group-item">
+                  <div class="media text-warn">
+                  <i class="bi bi-check-circle-fill text-warn me-2"></i>
+                  <div class="media-body">Reach 100K MarketCap</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media text-warn">
+                  <i class="bi bi-check-circle-fill text-warn me-2"></i>
+                  <div class="media-body">Burning Gorezilla Tokens</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media text-warn">
+                  <i class="bi bi-check-circle-fill text-warn me-2"></i>
+                  <div class="media-body">Running Marketing</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media text-warn">
+                  <i class="bi bi-check-circle-fill text-warn me-2"></i>
+                  <div class="media-body">Hit $250,000 MarketCap</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media text-warn">
+                  <i class="bi bi-check-circle-fill text-warn me-2"></i>
+                  <div class="media-body">Hit $500.000 MarketCap</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media text-warn">
+                  <i class="bi bi-check-circle-fill text-warn me-2"></i>
+                  <div class="media-body">Reach 500 Holder</div>
+                  </div>
+                  </li>
+                  <!-- <li class="list-group-item">
+                  <div class="media text-warn">
+                  <i class="bi bi-check-circle-fill text-warn me-2"></i>
+                  <div class="media-body">Gorezilla LOGO Contest</div>
+                  </div>
+                  </li> -->
+              </ul>
+              </div>
+              </div>
+              </div>
+              <div class="card border-0">
+              <div class="card-body">
+              <div>
+              <!-- <div class="badge bg-warn title-1 mb-3">Roadmaps</div> -->
+              <h4 class="card-title title-1 my-2"><i class="bi bi-coin me-2"></i>Phase 3</h4>
+              <div class="bg-brown" style="height:2px"></div>
+              </div>
+              <div class="card-text">
+              <ul class="list-group list-group-flush list-road">
+                <li class="list-group-item">
+                  <div class="media">
+                  <i class="bi bi-x-octagon-fill me-2"></i>
+                  <div class="media-body">Poocoin Ads</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media">
+                  <i class="bi bi-x-octagon-fill me-2"></i>
+                  <div class="media-body">CMC Listing</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media">
+                  <i class="bi bi-x-octagon-fill me-2"></i>
+                  <div class="media-body">CG Listings</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media">
+                  <i class="bi bi-x-octagon-fill me-2"></i>
+                  <div class="media-body">Reach 1000 Telegram Members</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media">
+                  <i class="bi bi-x-octagon-fill me-2"></i>
+                  <div class="media-body">Deploy Gorezilla NFT</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media">
+                  <i class="bi bi-x-octagon-fill me-2"></i>
+                  <div class="media-body">Reach 5000 telegram</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media">
+                  <i class="bi bi-x-octagon-fill me-2"></i>
+                  <div class="media-body">Burn 10% Suply</div>
+                  </div>
+                  </li>
+                  <li class="list-group-item">
+                  <div class="media">
+                  <i class="bi bi-x-octagon-fill me-2"></i>
+                  <div class="media-body">Hit $1,000,000 MarketCap</div>
+                  </div>
+                  </li>
+              </ul>
+              </div>
+              </div>
+              </div>
+
+              <div class="card border-0">
+                <div class="card-body">
+                <div>
+                <!-- <div class="badge bg-warn title-1 mb-3">Roadmaps</div> -->
+                <h4 class="card-title title-1 my-2"><i class="bi bi-coin me-2"></i>Phase 4</h4>
+                <div class="bg-brown" style="height:2px"></div>
+                </div>
+                <div class="card-text">
+
+                  <ul class="list-group list-group-flush list-road">
+                    <li class="list-group-item">
+                      <div class="media">
+                      <i class="bi bi-x-octagon-fill me-2"></i>
+                      <div class="media-body">Trying to Contact Ore-system SOON</div>
+                      </div>
+                      </li>
+                      <li class="list-group-item">
+                      <div class="media">
+                      <i class="bi bi-x-octagon-fill me-2"></i>
+                      <div class="media-body">Hit $10,000,000 MarketCap</div>
+                      </div>
+                      </li>
+                  </ul>
+
+
+    
+                  </div>
+                  </div>
+                  </div>
+
+            </div>
+          </div>
+          </div>
+          </div>
+        </section>
+        <div fill="#D8CBED" class="sc-lcvaEy as-2"><svg viewBox="0 0 1660 48" preserveAspectRatio="none" color="text" width="20px" xmlns="http://www.w3.org/2000/svg" class="sc-bdnxRM kDWlca"><path d="M1660 48C1139.02 46.1887 336.256 15.2453 0 0H1660V48Z"></path></svg></div>
+        <section class="space-xl grad-home-2" id="tokenomics">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 offset-md-1">
+                <h3 class="display-6 fw-bold text-center mb-0">
+                  Tokenomics
+                </h3>
+                <a href="javascript:void(0)" data-caption="Tokenomics" data-fancybox="token" data-src="assets/img/tokenomics.svg">
+                  <img src="assets/img/tokenomics.svg" alt="" width="100%">
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="bg-brown">
+        <section class="space-xl shape-1 text-white">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="assets/img/swap.png" alt="" width="100%">
+              </div>
+              <div class="col-md-6 align-self-center">
+                <div class="p-3">
+                <h3 class="display-6 fw-bold mb-4">
+                  Decentralized Exchange <br><span class="text-warn">Gorezilla Swap</span>
+                </h3>
+                <p>Check is allowed to exchange for other <br> tokens (ETC, BNB, USDT) on PancakeSwap.</p>
+                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalCome" class="btn btn-warn col-md-3">Exchange Now</a>
+              </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+        <section class="space-m" id="faq">
+          <div class="container">
+          <div class="col-md-8 offset-md-2">
+            <h3 class="display-6 fw-bold text-center mb-4">
+              Frequently Asked Questions
+            </h3>
+        
+            <div class="accordion acc-faq" id="accordionFaq">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button bg-warn font-res-accordion collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                What is Gorezilla?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionFaq">
+              <div class="accordion-body opacity-text">
+                Gorezilla is token With Ore-system reward.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button bg-warn font-res-accordion collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Why Ore-system?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFaq">
+              <div class="accordion-body opacity-text">
+                Because we see the potential of the Ore and it deserves to be owned by all NFT lovers.
+  We built Gorezilla to introduce the Ore-system to the world.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button bg-warn font-res-accordion collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Is Gorezilla safe?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFaq">
+              <div class="accordion-body opacity-text">
+                We locked Gorezilla liquidity in DXsale so you don't have to worry about Rugpull or something.  You can also check the Gorezilla Contract before buying. please don't buy before doing some research.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button bg-warn font-res-accordion collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Is Gorezilla part of the Ore-System?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFaq">
+              <div class="accordion-body opacity-text">
+                Gorezilla is not part of the Ore-system.
+  at least for now, we are trying to build Gorezilla so we can cooperate with the Ore-system in the future.
+  This is purely a community-made token and built to support the Ore-system.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button bg-warn font-res-accordion collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                What is the Gorezilla project in the future?
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionFaq">
+              <div class="accordion-body opacity-text">
+                We are planning to build a home for NFT makers.
+  NFT which will be useful for the community and for the Ore-system,
+  We don't want to compete with ore, but try to cooperate with Ore-system in the future.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button bg-warn font-res-accordion collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                How active is the Gorezilla community?
+              </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionFaq">
+              <div class="accordion-body opacity-text">
+                Now we have created Gorezilla groups from different countries.
+  All groups are active and we are working hard to keep them active.
+  The group is expected to be a forum for nft creators and ore token lovers.<br><br>
+  
+  This is purely a community-made token and built to support the Ore-system,
+  and if there is a mistake we do
+  is not the responsibility of the Ore-system.
+  LFGore.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+          </div>
+          </div>
+        </section>
+
+        <br>
+        <br>
+
+        <div class="bg-brown text-white">
+          <footer class="shape-1 space-m">
+            <div class="container">
+              <div class="d-flex justify-content-sm-between justify-content-center">
+                <div>
+                <div class="d-none d-sm-block">
+                <nav class="nav nav-bottom">
+                  <a class="nav-link" href="http://gorezillatoken.com/">Gorezilla</a>
+                  <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalCome">Exchange</a>
+                  <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalCome">Market</a>
+                  <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalCome">Open Apps</a>
+                </nav>
+                </div>
+                </div>
+                <div>
+                  <div class="nav-item text-uppercase align-self-center d-sm-none d-block mb-4">
+                    Join Community
+                  </div>
+                  <ul class="nav">
+                    <li class="nav-item text-uppercase align-self-center me-3 d-none d-sm-block">
+                      Join Community
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://twitter.com/GOREZILLA9" target="_blank">
+                        <i class="bi h4 text-warn bi-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://t.me/Gorezillatoken" target="_blank">
+                        <i class="bi h4 text-warn bi-telegram"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <hr>
+              <div class="small d-flex justify-content-center justify-content-sm-start align-items-center">
+                <img src="assets/img/logo-old.png" alt="" width="50" class="d-inline-block me-2">POWERED BY GOREZILLA TOKEN 2021
+              </div>
+            </div>
+          </footer>
+        </div>
+        
+        
+        <!-- <script src="" async defer></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
